@@ -1,7 +1,7 @@
 import shop_data from '../../../shop-data.json';
 import { Card } from '../card/card.component';
 import './large-card.style.scss';
-
+import '../gen-card.style.scss';
 export const LargeCard = () => {
     return (
         <div className='large-card card'>

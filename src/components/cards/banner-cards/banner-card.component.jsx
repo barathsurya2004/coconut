@@ -1,7 +1,7 @@
 import './banner-card.style.scss';
 import shop_data from '../../../shop-data.json';
 import { Card } from '../card/card.component';
-
+import '../gen-card.style.scss';
 export const BannerCard = () => {
     return (
         <div className='banner-card card' >

@@ -1,7 +1,7 @@
 import shop_data from '../../../shop-data.json';
 import { Card } from '../card/card.component';
 import './small-card.style.scss';
-
+import '../gen-card.style.scss';
 export const SmallCard = () => {
     return (
         <div className='small-card card'>

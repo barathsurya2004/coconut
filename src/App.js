@@ -1,24 +1,24 @@
 import './App.scss';
-import { BannerCard } from './components/cards/banner-cards/banner-card.component';
-import { LargeCard } from './components/cards/large-cards/large-card.component';
-import { SmallCard } from './components/cards/small-cards/small-card.component';
-import Footer from './components/footer/footer.component';
-import NavigationBar from './components/navigation-bar/navigation-bar.component';
-import shop_data from './shop-data.json';
-
+import { Hats } from './Routes/Hats/hats.route';
+import { Jackets } from './Routes/Jackets/jackets.route';
+import { Mens } from './Routes/Men/mens.route';
+import { Sneakers } from './Routes/Sneakers/sneakers.route';
+import { Womens } from './Routes/Womens/womens.route';
+import { Fixed } from './Routes/fixed/fixed.route';
+import { HomePage } from './Routes/homepage/homepage.route';
+import { Routes, Route } from 'react-router-dom';
 function App() {
   return (
-    <div>
-      <NavigationBar />
-      <div className='home'>
-        <LargeCard />
-        <SmallCard />
-        <BannerCard />
-        <SmallCard />
-        <LargeCard />
-      </div>
-      <Footer />
-    </div>
+    <Routes >
+      <Route path='/' element={<Fixed />}>
+        <Route index element={<HomePage />} />
+        <Route path='/mens' element={<Mens />} />
+        <Route path='/womens' element={<Womens />} />
+        <Route path='/hats' element={<Hats />} />
+        <Route path='/jackets' element={<Jackets />} />
+        <Route path='/sneakers' element={<Sneakers />} />
+      </Route>
+    </Routes>
 
   );
 }

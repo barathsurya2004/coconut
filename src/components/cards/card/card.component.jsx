@@ -1,5 +1,4 @@
 import './card.style.scss';
-
 export const Card = ({ itemData }) => {
     return (
         <div className='item' >

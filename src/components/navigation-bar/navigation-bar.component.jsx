@@ -1,9 +1,13 @@
 import logo from '../../assets/logo.svg';
-import './navigation-bar.style.scss'
+import './navigation-bar.style.scss';
+import { Link } from 'react-router-dom';
 const NavigationBar = () => {
     return (
         <div className="navigation-bar">
-            <img src={logo} alt='logo' />
+            <Link to={'/'}>
+
+                <img src={logo} alt='logo' />
+            </Link>
             <div className='search-container'>
                 <input type="search" className='search-box' />
                 <input type='submit' className='submit' />

@@ -1,18 +1,21 @@
 import './banner-card.style.scss';
-import shop_data from '../../../shop-data.json';
 import { Card } from '../card/card.component';
 import '../gen-card.style.scss';
-export const BannerCard = () => {
+import { Link } from 'react-router-dom';
+export const BannerCard = ({ cat, redi }) => {
+    const title = cat.title;
     return (
         <div className='banner-card card' >
-            <h2>Jackets</h2>
+            <h2>{title}</h2>
             <div className='items'>
-                <Card itemData={shop_data[5]} />
-                <Card itemData={shop_data[6]} />
-                <Card itemData={shop_data[8]} />
-                <Card itemData={shop_data[1]} />
+                <Card itemData={cat.items[1]} />
+                <Card itemData={cat.items[2]} />
+                <Card itemData={cat.items[3]} />
+                <Card itemData={cat.items[4]} />
             </div>
-            <h3>shop more on Jackets</h3>
+            <Link to={redi} className='h3'>
+                <h3>Shop more on {title}</h3>
+            </Link>
         </div>
     )
 }

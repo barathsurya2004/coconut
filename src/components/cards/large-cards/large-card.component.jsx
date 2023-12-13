@@ -1,16 +1,20 @@
-import shop_data from '../../../shop-data.json';
 import { Card } from '../card/card.component';
 import './large-card.style.scss';
 import '../gen-card.style.scss';
-export const LargeCard = () => {
+import { Link } from 'react-router-dom';
+export const LargeCard = ({ cat, redi }) => {
+    const title = cat.title;
     return (
         <div className='large-card card'>
-            <h2>Mens</h2>
+            <h2>{title}</h2>
             <div className='items'>
-                <Card itemData={shop_data[0]} />
-                <Card itemData={shop_data[1]} />
+                <Card itemData={cat.items[0]} />
+                <Card itemData={cat.items[1]} />
             </div>
-            <h3>shop more on Mens</h3>
+            <Link to={redi} className='h3'>
+                <h3>Shop more on {title}</h3>
+            </Link>
+
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import '../gen-card.style.scss';
-import shop_items from '../../../shop-data.json'
+// import shop_items from '../../../shop-data.json'
 import { Card } from '../card/card.component';
 import './indi-cards.style.scss'
 export const IndiCards = ({ element }) => {

@@ -1,13 +1,14 @@
 import { IndiCards } from '../../components/cards/individual-cards/indi-cards.component';
 import { SmallCard } from '../../components/cards/small-cards/small-card.component';
-import shop_data from '../../shop-data.json';
-
+import SHOP_DATA from '../../shop-data';
+// import shop_data from '../../shop-data.json';
+const data = SHOP_DATA.find((ele) => ele.title === 'Jackets')
 export const Jackets = () => {
     return <div className='mens'>
         <div className='items-container'>
 
             {
-                shop_data.map((item) => {
+                data.items.map((item) => {
                     return (
                         <IndiCards element={item} />
                     )

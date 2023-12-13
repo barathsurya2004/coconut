@@ -6,10 +6,13 @@ import { Sneakers } from './Routes/Sneakers/sneakers.route';
 import { Womens } from './Routes/Womens/womens.route';
 import { Fixed } from './Routes/fixed/fixed.route';
 import { HomePage } from './Routes/homepage/homepage.route';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Router } from 'react-router-dom';
 import { Shop } from './Routes/shop/shop.route';
+import { useEffect } from 'react';
 function App() {
+
   return (
+
     <Routes >
       <Route path='/' element={<Fixed />}>
         <Route index element={<HomePage />} />
@@ -21,6 +24,7 @@ function App() {
         <Route path='/shop' element={<Shop />} />
       </Route>
     </Routes>
+
 
   );
 }

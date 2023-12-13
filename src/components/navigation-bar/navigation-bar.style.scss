@@ -31,5 +31,27 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+
+
+        .cart {
+            width: 8%;
+            position: relative;
+            display: flex;
+            cursor: pointer;
+
+            .carticon {
+                width: 100%;
+            }
+
+            .cart-item-count {
+                position: absolute;
+                top: -8px;
+                right: -5px;
+                background-color: white;
+                padding: 0 4px;
+                border-radius: 50%;
+            }
+        }
     }
+
 }

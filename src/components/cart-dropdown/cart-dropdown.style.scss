@@ -1,0 +1,32 @@
+.cart-tray {
+    padding: 5px 10px;
+    position: absolute;
+    height: 300px;
+    width: 250px;
+    background-color: white;
+    border: 1px solid black;
+    right: 80px;
+    top: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .cart-items {
+        width: 100%;
+        height: 75%;
+        // background-color: grey;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+
+        .cart-item {
+            display: flex;
+
+            img {
+                height: 100px;
+                aspect-ratio: 7/9;
+                object-fit: conver;
+            }
+        }
+    }
+}

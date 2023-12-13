@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Footer from './components/footer/footer.component';
+import NavigationBar from './components/navigation-bar/navigation-bar.component';
+import shop_data from './shop-data.json';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavigationBar />
+      <div className='home'>
+        <div className='large-card'>
+          <h2>Mens</h2>
+          <div className='items'>
+            <div className='item' >
+              <img src={shop_data[0].imageUrl} />
+              <span>{shop_data[0].name}</span>
+            </div>
+            <div className='item' >
+              <img src={shop_data[1].imageUrl} />
+              <span>{shop_data[1].name}</span>
+            </div>
+          </div>
+          <h3>shop more on Mens</h3>
+        </div>
+      </div>
+      <Footer />
     </div>
+
   );
 }
 

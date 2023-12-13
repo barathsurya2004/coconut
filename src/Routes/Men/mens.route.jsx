@@ -2,14 +2,14 @@ import { IndiCards } from '../../components/cards/individual-cards/indi-cards.co
 import { SmallCard } from '../../components/cards/small-cards/small-card.component';
 import SHOP_DATA from '../../shop-data';
 // import shop_data from '../../shop-data.json';
-const catMen = SHOP_DATA[0]
+const data = SHOP_DATA.find((ele) => ele.title === 'Mens');
 
 export const Mens = () => {
     return <div className='mens'>
         <div className='items-container'>
 
             {
-                catMen.items.map((item) => {
+                data.items.map((item) => {
                     return (
                         <IndiCards element={item} />
                     )

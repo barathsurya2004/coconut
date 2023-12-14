@@ -1,9 +1,10 @@
 import { useContext } from "react"
 import { IsCartOnContext } from "../../contexts/cartcontext.context"
 import './cart-dropdown.style.scss';
+import { Link } from "react-router-dom";
 
 export const CartDropDown = () => {
-    const { cartItems } = useContext(IsCartOnContext);
+    const { cartItems, setIsCartOn } = useContext(IsCartOnContext);
     return (
         <div className='cart-tray'>
             <div className='cart-items'>
@@ -16,14 +17,20 @@ export const CartDropDown = () => {
                                 </div>
                                 <div className="info-cart">
                                     <h3>{item.name}</h3>
-                                    <span>{item.quantity} X {item.price}</span>
+                                    <span>Price: {item.price}</span>
+                                    <span>Quantity: {item.quantity}</span>
                                 </div>
                             </div>
                         )
                     })
                 }
             </div>
-            <button className='checkout'>Proceed to Checkout</button>
+            <Link to='/checkout' className="checkout-link" onClick={() => {
+                setIsCartOn(false);
+            }}>
+
+                <button className='checkout' >Proceed to Checkout</button>
+            </Link>
         </div>
     )
 }

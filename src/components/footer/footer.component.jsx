@@ -36,7 +36,6 @@ const Footer = () => {
 
                 <div className='add-links'>
                     <span className='link'>Home</span>
-                    <span className='link'>Pricing</span>
                     <span className='link'>Products</span>
                     <span className='link'>About Us</span>
                     <span className='link'>Careers</span>

@@ -21,13 +21,33 @@ const addToCart = (cartItems, addingItem) => {
     return [...cartItems, { ...addingItem, quantity: 1 }];
 }
 
+
+const removeFromCart = (cartItems, addingItem) => {
+    const existingItem = cartItems.find((ele) => ele.id === addingItem.id)
+
+    if (existingItem.quantity === 1) {
+        return cartItems.filter((item) => item.id !== existingItem.id);
+    }
+    else {
+        return cartItems.map((item) => {
+            if (item.id === existingItem.id) {
+                return { ...item, quantity: item.quantity - 1 };
+            }
+            else {
+                return item
+            }
+        })
+    }
+
+}
 export const IsCartOnContext = createContext({
     isCartOn: null,
     setIsCartOn: () => null,
     cartItems: [],
     setCartItems: () => null,
     addToCartItems: () => null,
-    noCartItems: 0
+    noCartItems: 0,
+    removeFromCartItems: () => null
 })
 
 export const ScrollToTop = ({ children }) => {
@@ -60,6 +80,11 @@ export const IsCartonProvider = ({ children }) => {
         SetNoCartItems(temp);
     }, [cartItems]);
 
-    return <IsCartOnContext.Provider value={{ isCartOn, setIsCartOn, cartItems, setCartItems, addToCartItems, noCartItems }}>{children}</IsCartOnContext.Provider>
+    const removeFromCartItems = (addingItem) => {
+        const temp = removeFromCart(cartItems, addingItem);
+        setCartItems(temp);
+    }
+
+    return <IsCartOnContext.Provider value={{ isCartOn, setIsCartOn, cartItems, setCartItems, addToCartItems, noCartItems, removeFromCartItems }}>{children}</IsCartOnContext.Provider>
 
 }

@@ -18,10 +18,13 @@ const NavigationBar = () => {
             </Link>
 
             <div className="links-container">
-                <Link to='/shop'>
-                    <span className='link'>Shop</span>
+                <Link to='/shop' className='link'>
+                    <span >Shop</span>
                 </Link>
-                <span className='link'>sign in</span>
+                <Link to='/auth' className='link'>
+
+                    <span >Sign In</span>
+                </Link>
                 <div className="cart" onClick={cartClickHandler}>
                     <img src={cart} alt="carticon" className='carticon' />
                     <span className='cart-item-count'>{noCartItems}</span>

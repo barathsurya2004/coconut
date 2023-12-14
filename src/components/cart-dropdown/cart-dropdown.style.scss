@@ -1,7 +1,7 @@
 .cart-tray {
     padding: 5px 10px;
     position: absolute;
-    height: 300px;
+    height: 350px;
     width: 250px;
     background-color: white;
     border: 1px solid black;
@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    z-index: 1;
 
     .cart-items {
         width: 100%;
@@ -23,10 +24,33 @@
             display: flex;
 
             img {
-                height: 100px;
-                aspect-ratio: 7/9;
-                object-fit: conver;
+                height: 90px;
+                width: 72px;
+                object-fit: cover;
+            }
+
+            .info-cart {
+                padding: 5px 10px;
+                display: flex;
+                flex-direction: column;
+
+                h3 {
+                    font-size: 18px;
+                }
             }
         }
+    }
+
+    .checkout-link {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .checkout {
+        width: 80%;
+        padding: 10px 0;
+        background-color: black;
+        color: white;
     }
 }

@@ -9,6 +9,7 @@ import { HomePage } from './Routes/homepage/homepage.route';
 import { Routes, Route, Router } from 'react-router-dom';
 import { Shop } from './Routes/shop/shop.route';
 import { useEffect } from 'react';
+import { CheckOut } from './Routes/checkout/checkout.component';
 function App() {
 
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/jackets' element={<Jackets />} />
         <Route path='/sneakers' element={<Sneakers />} />
         <Route path='/shop' element={<Shop />} />
+        <Route path='/checkout' element={<CheckOut />} />
       </Route>
     </Routes>
 

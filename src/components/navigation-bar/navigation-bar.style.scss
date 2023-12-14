@@ -5,6 +5,7 @@
     align-items: center;
     padding: 20px 30px;
     background-color: blanchedalmond;
+    box-shadow: 13px 13px 11px -5px rgba(0, 0, 0, 0.1);
 
     .search-container {
         width: 45%;
@@ -32,6 +33,11 @@
         justify-content: space-around;
         align-items: center;
 
+        .link {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
 
         .cart {
             width: 8%;

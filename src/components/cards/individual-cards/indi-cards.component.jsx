@@ -13,7 +13,7 @@ export const IndiCards = ({ element }) => {
                 <img src={element.imageUrl} alt={element.id} />
             </div>
             <span>{element.name}</span>
-            <button onClick={() => { addToCartItems(element) }}>Add to Cart</button>
+            <button onClick={() => { addToCartItems(element) }} className='add-to-cart'>Add to Cart</button>
         </div>
     )
 }
